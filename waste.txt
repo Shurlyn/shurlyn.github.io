@@ -1,0 +1,48 @@
+function hitsHead() {
+
+  for (let i = 0; i < platforms.length; i++) {
+    if (
+      ((player.x >= platforms[i].x) && (player.x <= platforms[i].x + platforms[i].platformWidth))
+      &&
+      ((player.y - 10 >= (platforms[i].y + platforms[i].platformHeight - 1)) && (player.y - 10 <= (platforms[i].y + platforms[i].platformHeight + 1)))
+    ) {
+      console.log('TRUE')
+      return true
+    } else {
+      console.log('FALSE')
+      return false
+    }
+  }
+} // End of hitsHead()
+
+// This function might be redundant since we could use collideRectCircle on the platform O_O
+function hitsSides() {
+
+  
+  for (let i = 0; i < platforms.length; i++) {
+    if (
+      ( // Left side of platform
+        (player.x >= platforms[i].x - 5)
+        &&
+        (player.y <= platforms[i].y + platforms[i].platformHeight + 5)
+      )
+      ||
+      ( // Right side of platform
+        (player.x >= platforms[i].x + platforms[i].platformWidth + 5)
+        && 
+        (player.y >= platforms[i].y - 5 && player.y <= platforms[i].y + platforms[i].platformHeight + 5)
+      )
+      //||
+      /*(
+      ((player.x >= platforms[i].x) && (player.x <= platforms[i].x + platforms[i].platformWidth))
+      &&
+      ((player.y - 10 >= (platforms[i].y + platforms[i].platformHeight - 1)) && (player.y - 10 <= (platforms[i].y + platforms[i].platformHeight + 1)))*/
+    )
+      
+     {
+      return true
+    } else {
+      return false
+    }
+  } 
+} // End of hitsSides()
