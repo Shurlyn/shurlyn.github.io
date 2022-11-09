@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "arduino-iot-js": "^0.8.0-beta.2",
+    "requirejs": "^2.3.6"
+  }
+}
